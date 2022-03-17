@@ -7,16 +7,18 @@ insert_permissions:
     check: {}
     columns:
     - key
+    - timestamp
     - value
   role: sensor
 select_permissions:
 - permission:
     allow_aggregations: true
     columns:
-    - value
-    - key
     - created_at
-    - updated_at
     - id
+    - key
+    - timestamp
+    - updated_at
+    - value
     filter: {}
-  role: user
+  role: client
