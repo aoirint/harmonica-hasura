@@ -4,7 +4,7 @@ services:
     image: postgres:14
     restart: always
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - ${HOST_DATA_DIR}:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: password
   graphql-engine:
@@ -24,5 +24,4 @@ services:
       HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET}
       # https://hasura.io/docs/latest/graphql/core/auth/authentication/jwt.html
       HASURA_GRAPHQL_JWT_SECRET: ${HASURA_GRAPHQL_JWT_SECRET}
-volumes:
-  db_data:
+
