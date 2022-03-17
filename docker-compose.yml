@@ -14,6 +14,10 @@ services:
     depends_on:
       - "postgres"
     restart: always
+    volumes:
+      # https://hasura.io/docs/latest/graphql/core/migrations/advanced/auto-apply-migrations.html#auto-apply-migrations
+      - ./hasura/migrations:/hasura-migrations
+      - ./hasura/metadata:/hasura-metadata
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:password@postgres:5432/postgres
       HASURA_GRAPHQL_ENABLE_CONSOLE: ${HASURA_GRAPHQL_ENABLE_CONSOLE}
