@@ -1,3 +1,22 @@
 table:
   name: SensorValue
   schema: public
+insert_permissions:
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - key
+    - value
+  role: sensor
+select_permissions:
+- permission:
+    allow_aggregations: true
+    columns:
+    - value
+    - key
+    - created_at
+    - updated_at
+    - id
+    filter: {}
+  role: user
