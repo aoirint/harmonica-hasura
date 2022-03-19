@@ -12,7 +12,7 @@ source venv/bin/activate
 # Windows
 source venv/Scripts/activate
 
-pip3 install -r scripts/requiments.txt
+pip3 install -r scripts/requirements.txt
 
 python3 scripts/create_token.py --user_id 1 --role sensor
 python3 scripts/create_token.py --user_id 2 --role client
