@@ -4,7 +4,7 @@
 #
 #    pip-compile ./scripts/requirements.in
 #
-pyjwt==2.3.0
-    # via -r ./scripts/requirements.in
+pyjwt==2.4.0
+    # via -r requirements.in
 python-dotenv==0.19.2
-    # via -r ./scripts/requirements.in
+    # via -r requirements.in
