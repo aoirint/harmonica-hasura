@@ -1,24 +1,24 @@
 table:
-  name: SensorValue
   schema: public
+  name: SensorValue
 insert_permissions:
-- permission:
-    backend_only: false
-    check: {}
-    columns:
-    - key
-    - timestamp
-    - value
-  role: sensor
+  - role: sensor
+    permission:
+      check: {}
+      columns:
+        - key
+        - timestamp
+        - value
+      backend_only: false
 select_permissions:
-- permission:
-    allow_aggregations: true
-    columns:
-    - created_at
-    - id
-    - key
-    - timestamp
-    - updated_at
-    - value
-    filter: {}
-  role: client
+  - role: client
+    permission:
+      columns:
+        - created_at
+        - id
+        - key
+        - timestamp
+        - updated_at
+        - value
+      filter: {}
+      allow_aggregations: true
