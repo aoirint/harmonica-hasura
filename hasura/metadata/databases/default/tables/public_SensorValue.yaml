@@ -1,7 +1,14 @@
 table:
-  schema: public
   name: SensorValue
+  schema: public
 insert_permissions:
+  - role: l12_node
+    permission:
+      check: {}
+      columns:
+        - key
+        - timestamp
+        - value
   - role: sensor
     permission:
       check: {}
@@ -9,7 +16,6 @@ insert_permissions:
         - key
         - timestamp
         - value
-      backend_only: false
 select_permissions:
   - role: client
     permission:
@@ -22,3 +28,13 @@ select_permissions:
         - value
       filter: {}
       allow_aggregations: true
+  - role: l12_node
+    permission:
+      columns:
+        - value
+        - key
+        - created_at
+        - timestamp
+        - updated_at
+        - id
+      filter: {}
