@@ -6,5 +6,5 @@
 #
 pyjwt==2.4.0
     # via -r requirements.in
-python-dotenv==0.19.2
+python-dotenv==1.2.2
     # via -r requirements.in
